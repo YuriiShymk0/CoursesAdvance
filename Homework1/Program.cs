@@ -9,6 +9,10 @@ namespace Homework1
         {
             int a = 5;
             Console.WriteLine(a.ToString());
+            Console.WriteLine("make back up for git ");
+
+            bool result = false;
+
         }
     }
 }
