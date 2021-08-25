@@ -8,10 +8,10 @@ namespace Homework1
     {
         static void Main(string[] args)
         {
-            Stack<string> stack = new Stack<string>();
+            Stack<double> stack = new Stack<double>();
             for (int i = 0; i < 36; i++)
             {
-                Stack<string>.Push("sdf");
+                Stack<double>.Push(20.2);
             }
 
         }

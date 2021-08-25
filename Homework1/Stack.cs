@@ -21,14 +21,14 @@ namespace Homework1
             }
             else
             {
-                Array.Resize<T>(ref _arr,_arr.Length *2);
+                Array.Resize<T>(ref _arr, _arr.Length * 2);
                 HelpPush(value);
             }
         }
 
         public static void HelpPush(T value)
         {
-            _arr.SetValue(value, Array.IndexOf(_arr, 0));
+            _arr.SetValue(value, Array.IndexOf(_arr, _arr[_counterOFOperation]));
             _arrForPush = (T[])_arr.Clone();
             _counterOFOperation++;
         }
