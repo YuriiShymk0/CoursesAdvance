@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Homework1
@@ -7,11 +8,11 @@ namespace Homework1
     {
         static void Main(string[] args)
         {
-            int a = 5;
-            Console.WriteLine(a.ToString());
-            Console.WriteLine("make back up for git ");
-
-            bool result = false;
+            Stack<string> stack = new Stack<string>();
+            for (int i = 0; i < 36; i++)
+            {
+                Stack<string>.Push("sdf");
+            }
 
         }
     }
