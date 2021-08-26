@@ -22,7 +22,6 @@ namespace Homework1
             countOFOperation++;
         }
 
-
         public T Pop()
         {
             if (countOFOperation > 0)
@@ -42,7 +41,5 @@ namespace Homework1
         {
             return _arr[0];
         }
-
-
     }
 }
