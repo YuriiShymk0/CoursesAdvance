@@ -7,16 +7,15 @@ namespace Homework2
         static void Main(string[] args)
         {
             Stack<int> stack = new Stack<int>();
-            for (int i = 0; i < 14; i++)
-            {
-                Console.WriteLine(stack.Pop());
-            };
-            Console.WriteLine(stack.Peek());
-            for (int i = 0; i < 14; i++)
+            
+            for (int i = 0; i < 55; i++)
             {
                 stack.Push(i);
             }
-            Console.WriteLine(stack.Peek());
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(stack.Pop());
+            }
         }
     }
 }

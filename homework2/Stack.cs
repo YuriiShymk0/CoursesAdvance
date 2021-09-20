@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Homework2
 {
-    public class Stack<T> where T : struct 
+    public class Stack<T> where T : struct
     {
         private static T[] _arr = new T[10];
         private uint countOFOperation = 0;
@@ -21,11 +21,11 @@ namespace Homework2
 
         public T Pop()
         {
-            if (countOFOperation > 0)
+            if (countOFOperation > 1)
             {
-                _arr = _arr.Skip(1).ToArray();
+                _arr = _arr.Where((source, index) => index != countOFOperation - 1).ToArray();
                 countOFOperation--;
-                return Peek();
+                return _arr[countOFOperation - 1];
             }
             return default;
         }
