@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Homework1
 {
-    public class Stack<T> 
+    public class Stack<T>
     {
         private static T[] _arr = new T[10];
         private uint countOFOperation = 0;
@@ -26,9 +26,9 @@ namespace Homework1
         {
             if (countOFOperation > 0)
             {
-                _arr = _arr.Skip(1).ToArray();
+                _arr = _arr.Where((source, index) => index != countOFOperation - 1).ToArray();
                 countOFOperation--;
-                return Peek();
+                return _arr[countOFOperation - 1];
             }
             else if (default(T) == null)
             {
