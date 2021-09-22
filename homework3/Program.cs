@@ -4,7 +4,7 @@ namespace homework3
 {
     class Program
     {
-        public static int firstValue, secondValue, result;
+        public static int firstValue, secondValue;
         public static char operation;
         delegate int Calculation(int firstValue, int secondValue);
 
@@ -176,9 +176,9 @@ namespace homework3
 
         public static void HelloWithAction()
         {
-            Action<string,string> HelloOnConsole;
-            HelloOnConsole = (s,d) => Console.WriteLine($"{s}\n{d}");
-            HelloOnConsole ("Hello World" ,"Good bye");
+            Action<string, string> HelloOnConsole;
+            HelloOnConsole = (s, d) => Console.WriteLine($"{s}\n{d}");
+            HelloOnConsole("Hello World", "Good bye");
         }
 
         public static void HelloWithActionAndLIamda()
@@ -187,7 +187,7 @@ namespace homework3
             action += () => GoodBye();
             action();
         }
-        
+
 
 
         public static void HelloWorld()
