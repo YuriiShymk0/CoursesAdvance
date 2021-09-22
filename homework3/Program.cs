@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace homework3
 {
@@ -18,6 +17,11 @@ namespace homework3
             CalculationWithanonimDelegate();//anonim methods
 
             CalculationWithFuncDelegate();//Func methods
+
+            HelloWithAction();//my way of solving the problem
+
+            HelloWithActionAndLIamda();//i think it should work that way
+
         }
 
         public static int EnterNumbersFromConsole()
@@ -169,8 +173,31 @@ namespace homework3
         {
             Console.WriteLine("cannot be divided by zero");
         }
-        //    Action<string, string> HelloOnConsole;
-        //    HelloOnConsole =>  "Hello World";
 
+        public static void HelloWithAction()
+        {
+            Action<string,string> HelloOnConsole;
+            HelloOnConsole = (s,d) => Console.WriteLine($"{s}\n{d}");
+            HelloOnConsole ("Hello World" ,"Good bye");
+        }
+
+        public static void HelloWithActionAndLIamda()
+        {
+            Action action = () => HelloWorld();
+            action += () => GoodBye();
+            action();
+        }
+        
+
+
+        public static void HelloWorld()
+        {
+            Console.WriteLine("Hello World");
+        }
+
+        public static void GoodBye()
+        {
+            Console.WriteLine("Good bye");
+        }
     }
 }
