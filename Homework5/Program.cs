@@ -28,9 +28,6 @@ namespace Homework5
             Console.WriteLine("\nSerilalized Json file :" + Serilalizer("User.json", jsonstrforserilialize));
 
             Console.WriteLine("\nDeserilalized Json file :" + Deserilalizer("User.json"));
-
-            Console.WriteLine("\nDecrypted Json string : " + DecryptionJson(_stringForDeserialize));
-
         }
 
         private static string Serilalizer(string roadtofile, string dataforserealize)
@@ -44,7 +41,7 @@ namespace Homework5
         {
             string jsonstr = File.ReadAllText(roadtofile);
             _stringForDeserialize = JsonSerializer.Deserialize<string>(jsonstr);
-            return _stringForDeserialize;
+            return DecryptionJson(_stringForDeserialize); 
         }
 
         private static string EncryptionJson(string jsonStrForEncrypt)
