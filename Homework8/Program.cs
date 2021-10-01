@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Homework8
 {
@@ -21,26 +19,29 @@ namespace Homework8
                 );
                 HelpConsole(thread, i);
             }
+
             Console.WriteLine();
+
             for (int i = 0; i < 10; i++)
             {
-                Thread thread1 = new Thread(() => Console.WriteLine($"{Thread.CurrentThread.Name}  operation Pop number ({stack.Pop()})"));
-                HelpConsole(thread1, i);
+                Thread thread = new Thread(() => Console.WriteLine($"{Thread.CurrentThread.Name}  operation Pop number ({stack.Pop()})"));
+                HelpConsole(thread, i);
             }
+
             Console.WriteLine();
+
             for (int i = 0; i < 10; i++)
             {
-                Thread thread2 = new Thread(() => Console.WriteLine($"{Thread.CurrentThread.Name} operation Peek ({stack.Peek()})"));
-                HelpConsole(thread2,i);
+                Thread thread = new Thread(() => Console.WriteLine($"{Thread.CurrentThread.Name} operation Peek ({stack.Peek()})"));
+                HelpConsole(thread,i);
             }
         }
+
         public static void HelpConsole(Thread name, int counter)
         {
             name.Name = $"Thread № {counter} :";
             name.Start();
             Thread.Sleep(50);
         }
-
     }
-
 }

@@ -4,7 +4,6 @@ using System.Threading;
 
 namespace Homework8
 {
-
     public class Stack<T> where T : struct
     {
         private static T[] _arr = new T[10];
