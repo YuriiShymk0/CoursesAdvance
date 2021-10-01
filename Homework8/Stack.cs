@@ -7,12 +7,12 @@ namespace Homework8
 
     public class Stack<T> where T : struct
     {
-        private static  T[] _arr = new T[10];
+        private static T[] _arr = new T[10];
         private static uint countOFOperation = 0;
         public static object locker = new object();
-        static Semaphore semaphore = new Semaphore(2, 5);
+        public static Semaphore semaphore = new Semaphore(5, 5);
 
-        public  void Push(T value)
+        public void Push(T value)
         {
             lock (locker)
             {
@@ -25,7 +25,7 @@ namespace Homework8
             }
         }
 
-        public   T Pop()
+        public T Pop()
         {
             lock (locker)
             {
@@ -39,15 +39,12 @@ namespace Homework8
             }
         }
 
-        public  T Peek()
+        public T Peek()
         {
-            lock (locker)
-            {
-                semaphore.WaitOne();
-                semaphore.Release();
-                Thread.Sleep(500);
-                return _arr[0];
-            }
+            semaphore.WaitOne();
+            Thread.Sleep(2000);
+            semaphore.Release();
+            return _arr[0];
         }
 
     }
