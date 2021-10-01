@@ -10,7 +10,7 @@ namespace Homework8
         private static  T[] _arr = new T[10];
         private static uint countOFOperation = 0;
         public static object locker = new object();
-        
+        static Semaphore semaphore = new Semaphore(2, 5);
 
         public  void Push(T value)
         {
@@ -41,7 +41,13 @@ namespace Homework8
 
         public  T Peek()
         {
-            return _arr[0];
+            lock (locker)
+            {
+                semaphore.WaitOne();
+                semaphore.Release();
+                Thread.Sleep(500);
+                return _arr[0];
+            }
         }
 
     }

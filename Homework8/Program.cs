@@ -8,7 +8,6 @@ namespace Homework8
     class Program
     {
         static Stack<int> stack = new Stack<int>();
-        static Semaphore semaphore = new Semaphore(5, 5);
 
         static void Main(string[] args)
         {
@@ -17,16 +16,18 @@ namespace Homework8
                 Thread thread = new Thread(() => stack.Push(i));
                 thread.Start();
                 Thread.Sleep(50);
+                
             }
             for (int i = 0; i < 10; i++)
             {
-                Thread thread1 = new Thread(() => Console.WriteLine(stack.Pop())); ;
+                Thread thread1 = new Thread(() => Console.WriteLine(stack.Pop()));
                 thread1.Start();
                 Thread.Sleep(50);
             }
             for (int i = 0; i < 10; i++)
             {
-                Thread thread2 = new Thread(() => Console.WriteLine(stack.Peek()));
+                Thread thread2 = new Thread(() => Console.WriteLine($"{Thread.CurrentThread.Name} {stack.Peek()}"));
+                thread2.Name = $"Thread {i}";
                 thread2.Start();
                 Thread.Sleep(50);
             }
