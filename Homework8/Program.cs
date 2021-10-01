@@ -14,27 +14,24 @@ namespace Homework8
         {
             for (int i = 0; i < 10; i++)
             {
-                Thread thread = new Thread(new ParameterizedThreadStart(HelpPush()));
-                thread.Start(i);
+                Thread thread = new Thread(() => stack.Push(i));
+                thread.Start();
                 Thread.Sleep(50);
             }
             for (int i = 0; i < 10; i++)
             {
-                Thread thread = new Thread(stack.Pop);
-                thread.Start(i);
+                Thread thread1 = new Thread(() => Console.WriteLine(stack.Pop())); ;
+                thread1.Start();
                 Thread.Sleep(50);
             }
             for (int i = 0; i < 10; i++)
             {
-                Thread thread = new Thread(stack.Peek);
-                thread.Start(i);
+                Thread thread2 = new Thread(() => Console.WriteLine(stack.Peek()));
+                thread2.Start();
                 Thread.Sleep(50);
             }
-            
+
         }
-        public static void HelpPush(int i)
-        {
-            stack.Push(i);
-        }
+       
     }
 }

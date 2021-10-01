@@ -7,12 +7,12 @@ namespace Homework8
 
     public class Stack<T> where T : struct
     {
-        private static T[] _arr = new T[10];
-        private uint countOFOperation = 0;
-        public object locker = new object();
+        private static  T[] _arr = new T[10];
+        private static uint countOFOperation = 0;
+        public static object locker = new object();
         
 
-        public void Push(T value)
+        public  void Push(T value)
         {
             lock (locker)
             {
@@ -25,7 +25,7 @@ namespace Homework8
             }
         }
 
-        public T Pop()
+        public   T Pop()
         {
             lock (locker)
             {
@@ -39,7 +39,7 @@ namespace Homework8
             }
         }
 
-        public T Peek()
+        public  T Peek()
         {
             return _arr[0];
         }
