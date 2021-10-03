@@ -46,6 +46,10 @@ namespace Library
                 }
             }
         }
+        public override string ToString()
+        {
+            return ($"Name : {Name} , surname: {Surname}");
+        }
     }
     public class Company
     {
@@ -68,6 +72,10 @@ namespace Library
                     throw new ArgumentNullException("CompanyName can`t be empty");
                 }
             }
+        }
+        public override string ToString()
+        {
+            return ($"CompanyName : {CompanyName} ");
         }
     }
 }

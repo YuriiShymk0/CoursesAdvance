@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Reflection;
+using System.Runtime.Remoting;
 using System.Threading;
 
 
@@ -9,11 +11,11 @@ namespace Homework9
     {
         static void Main(string[] args)
         {
-            var result = MeinMenu();
-            Console.WriteLine(result);
+             MeinMenu();
+       
         }
 
-        private static object MeinMenu()
+        private static void MeinMenu()
         {
             while (true)
             {
@@ -23,15 +25,28 @@ namespace Homework9
                     switch (valueFromConsole)
                     {
                         case 1:
-                            Assembly assembly = Assembly.LoadFrom("Library1.dll");
-                            Type type = assembly.GetType("Library.User", true, true);
-                            object obj = Activator.CreateInstance(type);
-                            return obj;
+                            ObjectHandle handle = Activator.CreateInstance("Library1", "Library.User");
+                            object p = handle.Unwrap();
+                            Type t = p.GetType();
+                            PropertyInfo nameprop = t.GetProperty("Name");
+                            if (nameprop != null)
+                                nameprop.SetValue(p, "Samuel");
+                            PropertyInfo surnameprop = t.GetProperty("Surname");
+                            if (surnameprop != null)
+                                surnameprop.SetValue(p, "Jeckson");
+                            Console.WriteLine(p.ToString());
+                            break;
+                            
+                           
                         case 2:
-                            Assembly assembly1 = Assembly.LoadFrom("Library2.dll");
-                            Type type1 = assembly1.GetType("Library.Company", true, true);
-                            object obj1 = Activator.CreateInstance(type1);
-                            return obj1;
+                           // Assembly assembly1 = Assembly.LoadFrom("Library2.dll");
+                            ObjectHandle handle1 = Activator.CreateInstance("Library2", "Library.Company");
+                            object p1 = handle1.Unwrap();
+                            Type t1 = p1.GetType();
+                            PropertyInfo prop1 = t1.GetProperty("CompanyName");
+                            if (prop1 != null)
+                                prop1.SetValue(p1, "Samuel");
+                            break;
                         default:
                             Console.WriteLine("\t\t\t\t\t\tTry again ");
                             Thread.Sleep(700);
