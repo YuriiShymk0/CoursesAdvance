@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Library
 {
     [Serializable]
-    public class User
+    public class User 
     {
         private string _name;
         private string _surname;
