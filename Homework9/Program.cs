@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Homework9
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -30,22 +30,26 @@ namespace Homework9
                             Type t = p.GetType();
                             PropertyInfo nameprop = t.GetProperty("Name");
                             if (nameprop != null)
-                                nameprop.SetValue(p, "Samuel");
+                                nameprop.SetValue(p, "Sam");
                             PropertyInfo surnameprop = t.GetProperty("Surname");
                             if (surnameprop != null)
                                 surnameprop.SetValue(p, "Jeckson");
-                            Console.WriteLine(p.ToString());
+                            if (t.IsSerializable)
+                            {
+                                Console.WriteLine(handle.ToString());
+                            }
                             break;
-                            
-                           
                         case 2:
-                           // Assembly assembly1 = Assembly.LoadFrom("Library2.dll");
                             ObjectHandle handle1 = Activator.CreateInstance("Library2", "Library.Company");
                             object p1 = handle1.Unwrap();
                             Type t1 = p1.GetType();
                             PropertyInfo prop1 = t1.GetProperty("CompanyName");
                             if (prop1 != null)
-                                prop1.SetValue(p1, "Samuel");
+                                prop1.SetValue(p1, "Nike");
+                            if (t1.IsSerializable)
+                            {
+                                Console.WriteLine(p1.ToString());
+                            }
                             break;
                         default:
                             Console.WriteLine("\t\t\t\t\t\tTry again ");
@@ -62,6 +66,5 @@ namespace Homework9
                 }
             }
         }
-
     }
 }

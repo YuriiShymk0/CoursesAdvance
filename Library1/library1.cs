@@ -46,7 +46,7 @@ namespace Library
                 }
             }
         }
-        public override string ToString()
+        public string ShowUser()
         {
             return ($"Name : {Name} , surname: {Surname}");
         }
