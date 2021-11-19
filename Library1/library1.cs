@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Runtime.Serialization;
-
 namespace Library
 {
     [Serializable]
-    public class User 
+    public class User
     {
         private string _name;
         private string _surname;
@@ -46,9 +44,9 @@ namespace Library
                 }
             }
         }
-        public string ShowUser()
+        public void ShowUser()
         {
-            return ($"Name : {Name} , surname: {Surname}");
+            Console.WriteLine($"Name : {Name} , surname: {Surname}");
         }
     }
     public class Company
@@ -73,7 +71,8 @@ namespace Library
                 }
             }
         }
-        public override string ToString()
+        
+        public string ShowUser()
         {
             return ($"CompanyName : {CompanyName} ");
         }

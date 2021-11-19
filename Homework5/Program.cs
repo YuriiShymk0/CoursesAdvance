@@ -1,10 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
 namespace Homework5
 {
+    /*
+     * Write a program that will serialize a simple object of class User (with fields string name, int age iEnum seniority) in Json string.
+     * But!
+     * 1) The received Json term needs to be encrypted that it was impossible to understand from the text what information contains
+     * in the middle and to write down in a file (to think up own encryption algorithm);
+     * 
+     * 2) Implement deserialization together with decoding.
+     */
     class Program
     {
         private const int _lvlEncrypt = 6;
@@ -41,7 +48,7 @@ namespace Homework5
         {
             string jsonstr = File.ReadAllText(roadtofile);
             _stringForDeserialize = JsonSerializer.Deserialize<string>(jsonstr);
-            return DecryptionJson(_stringForDeserialize); 
+            return DecryptionJson(_stringForDeserialize);
         }
 
         private static string EncryptionJson(string jsonStrForEncrypt)

@@ -3,6 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace HomeWork4
+/*
+ * 1) Given an array of strings. Find the sum of the lengths of all the terms exclusively using the LINQ query
+ * There is an array of numbers int from 10 to 100 of size N. Find the sum of the numbers of the last digits of each number. For example, the array {13, 98, 24, 43}. Result = 3 + 8 + 4 + 3 = 18
+ * There is an array of numbers int, for example, an array {13, 98, 24, 43}.
+ * 
+ * 2) This sequence of maximum elements is ordered in ascending order of their last digits - 13, 43, 24, 98
+ * Among all the elements of the sequence ending in the same number (13 and 43). Select the maximum item (ie 43).
+ * 
+ * 3) There is a list of applicants. Each item in the list includes the following fields:
+ * <Surname> <School number> <Year of entry>
+ * For each of the schools to find all the years of admission.
+ * Print the school number and the years of admission found for it
+ */
 {
     class Program
     {

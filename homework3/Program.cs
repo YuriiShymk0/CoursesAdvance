@@ -2,6 +2,11 @@
 
 namespace homework3
 {
+    /* 1) Write a program "Calculator", which will ask the user for the action "*", "/", "-" or "+".
+     * Write appropriate anonymous methods for these operations.
+     * Create a Func delegate and assign it the required method to run and return the result to the screen.
+     * 2) Create an Action delegate to which to add two lambda expressions via the + = operator, which will alternately display "Hello World!" and "Good bye!".
+     */
     class Program
     {
         public static int firstValue, secondValue;

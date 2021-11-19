@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
+﻿using System;
 using System.Reflection;
 using System.Runtime.Remoting;
 using System.Threading;
@@ -7,12 +6,18 @@ using System.Threading;
 
 namespace Homework9
 {
-    class Program 
+    /*
+     * Create two separate projects Library1.dll and Library2.dll (to have two separate dll files).
+     * In the middle of these projects should be defined by the class User i Company. Namespaces in these libraries should be named the same.
+     * In project 1 of the User class add the Serializeble attribute and in project 2 Serializeble add to the Company class.
+     * Create a console program that will ask which library the user wants to download, 1 or 2.
+     * Load the required dll and create an object of that class from this dll, which will be marked with the Serializeble attribute.
+     */
+    class Program
     {
         static void Main(string[] args)
         {
-             MeinMenu();
-       
+            MeinMenu();
         }
 
         private static void MeinMenu()
