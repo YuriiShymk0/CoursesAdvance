@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework3", "homework3\Home
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodForRefactoring", "CodForRefactoring\CodForRefactoring.csproj", "{2994E78B-C0C7-4736-A835-27A4E21F622D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork4", "HomeWork4\HomeWork4.csproj", "{FF932288-071C-44A1-A23C-BDE559AE32AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework4", "HomeWork4\Homework4.csproj", "{FF932288-071C-44A1-A23C-BDE559AE32AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework5", "Homework5\Homework5.csproj", "{8E97B3BD-FF40-43FF-9326-ECB347C55DDF}"
 EndProject
@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library1", "Library1\Librar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library2", "Library2\Library2.csproj", "{9C6F1CC1-170F-42AE-B52C-B317A44CE983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework10", "Homework10\Homework10.csproj", "{045393DB-0993-4032-A609-1817303E6F0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework10", "Homework10\Homework10.csproj", "{045393DB-0993-4032-A609-1817303E6F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework10Tests", "Homework10Tests\Homework10Tests.csproj", "{EF08796F-B282-4FB7-9A0C-CC70639BC647}"
 EndProject
