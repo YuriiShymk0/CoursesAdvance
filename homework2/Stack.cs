@@ -1,13 +1,10 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Homework1
+namespace Homework2
 {
-    public class Stack<T>
+    public class Stack<T> where T : struct
     {
         private static T[] _arr = new T[10];
         private uint countOFOperation = 0;
@@ -24,15 +21,11 @@ namespace Homework1
 
         public T Pop()
         {
-            if (countOFOperation > 0)
+            if (countOFOperation > 1)
             {
                 _arr = _arr.Where((source, index) => index != countOFOperation - 1).ToArray();
                 countOFOperation--;
                 return _arr[countOFOperation - 1];
-            }
-            else if (default(T) == null)
-            {
-                return (T)(object)"0";  //костиль для виведення нуля
             }
             return default;
         }
